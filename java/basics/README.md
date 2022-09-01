@@ -254,13 +254,13 @@ private static class Node<E> {
 public class LinkedList<E>
         extends AbstractSequentialList<E>
         implements List<E>, Deque<E>, Cloneable, java.io.Serializable {
-    
+
     // LinkedList#add
     public boolean add(E e) {
         linkLast(e);
         return true;
     }
-    
+
     void linkLast(E e) {
         // 获取尾节点
         final Node<E> l = last;
@@ -277,8 +277,8 @@ public class LinkedList<E>
         size++;
         modCount++;
     }
-    
-	public boolean remove(Object o) {
+
+    public boolean remove(Object o) {
         if (o == null) {
             for (Node<E> x = first; x != null; x = x.next) {
                 if (x.item == null) {
@@ -296,17 +296,17 @@ public class LinkedList<E>
         }
         return false;
     }
-    
+
     // 获取node
     public E get(int index) {
         // 检查索引index
         checkElementIndex(index);
         return node(index).item;
     }
-    
+
     Node<E> node(int index) {
         // assert isElementIndex(index);
-		// 取linkedList的中位数 小于就从前往后找 大于就从后往前找
+        // 取linkedList的中位数 小于就从前往后找 大于就从后往前找
         if (index < (size >> 1)) {
             Node<E> x = first;
             for (int i = 0; i < index; i++)
@@ -322,7 +322,7 @@ public class LinkedList<E>
 }
 ```
 
-### Iterator 
+### Iterator
 
 我们之前学习数据结构时，已经得知，不同的线性表实现，在获取元素时的效率也不同，因此我们需要一种更好地方式来统一不同数据结构的遍历。
 
@@ -332,24 +332,28 @@ public class LinkedList<E>
 
 ```java
 public interface Iterator<E> {
-  //...
+    //...
 }
 ```
 
 每个集合类都有自己的迭代器，通过`iterator()`方法来获取：
 
 ```java
-Iterator<Integer> iterator = list.iterator();   //生成一个新的迭代器
-while (iterator.hasNext()){    //判断是否还有下一个元素
-  Integer i = iterator.next();     //获取下一个元素（获取一个少一个）
-  System.out.println(i);
+public class ItMain {
+    public static void main(String[] args) {
+        //生成一个新的迭代器
+        Iterator<String> iterator = linkedList.iterator();
+        //判断是否还有下一个元素
+        while (iterator.hasNext()) {
+            //获取下一个元素（获取一个少一个）
+            String i = iterator.next();
+            System.out.println(i);
+        }
+    }
 }
 ```
 
-迭代器生成后，默认指向第一个元素，每次调用`next()`方法，都会将指针后移，当指针移动到最后一个元素之后，调用`hasNext()`将会返回`false`，迭代器是一次性的，用完即止，如果需要再次使用，需要调用`iterator()`方法。
+迭代器生成后，默认指向第一个元素，每次调用`next()`方法，都会将指针后移，当指针移动到最后一个元素之后，调用`hasNext()`将会返回`false`，迭代器是一次性的，用完即止，如果需要再次使用，需要调用`iterator()`
+方法。
 
-```java
-ListIterator<Integer> iterator = list.listIterator();   //List还有一个更好地迭代器实现ListIterator
-```
-
-`ListIterator`是List中独有的迭代器，在原有迭代器基础上新增了一些额外的操作。
+ListIterator是List中独有的迭代器，在原有迭代器基础上新增了一些额外的操作。(是否有上一个)

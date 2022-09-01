@@ -1,5 +1,6 @@
 package com.laoshiren.base.collect;
 
+import java.util.Iterator;
 import java.util.LinkedList;
 
 /**
@@ -20,6 +21,15 @@ public class IteratorMain {
 
         for (String s : linkedList) {
             System.out.println(s);
+        }
+
+        //生成一个新的迭代器
+        Iterator<String> iterator = linkedList.iterator();
+        //判断是否还有下一个元素
+        while (iterator.hasNext()){
+            //获取下一个元素（获取一个少一个）
+            String i = iterator.next();
+            System.out.println(i);
         }
     }
 
