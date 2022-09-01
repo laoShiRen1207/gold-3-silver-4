@@ -1,4 +1,4 @@
-package com.laoshiren.base.collect;
+package com.laoshiren.base.collect.iterator;
 
 import java.util.Iterator;
 import java.util.LinkedList;

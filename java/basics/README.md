@@ -357,3 +357,93 @@ public class ItMain {
 方法。
 
 ListIterator是List中独有的迭代器，在原有迭代器基础上新增了一些额外的操作。(是否有上一个)
+
+### Set
+
+我们之前已经看过`Set`接口的定义了，我们发现接口中定义的方法都是Collection中直接继承的，因此，Set支持的功能其实也就和Collection中定义的差不多，只不过使用方法上稍有不同。
+
+Set集合特点：
+
+* 不允许出现重复元素
+* 不支持随机访问（不允许通过下标访问）
+
+首先认识一下HashSet，它的底层就是采用哈希表实现的
+
+```java
+public class SetMain {
+
+    public static void main(String[] args) {
+        HashSet<Integer> hashSet = new HashSet<>();
+        hashSet.add(1);
+        hashSet.add(1);
+        hashSet.add(2);
+        hashSet.forEach(System.out::println);
+    }
+}
+```
+
+LinkedHashSet底层维护的不再是一个HashMap，而是LinkedHashMap，它能够在插入数据时利用链表自动维护顺序，因此这样就能够保证我们插入顺序和最后的迭代顺序一致了。
+
+还有一种Set叫做TreeSet，它会在元素插入时进行排序：
+
+```java
+public class SetMain {
+    public static void main(String[] args) {
+        TreeSet<Integer> set = new TreeSet<>();
+        set.add(1);
+        set.add(3);
+        set.add(2);
+        System.out.println(set);
+    }
+}
+```
+
+可以看到最后得到的结果并不是我们插入顺序，而是按照数字的大小进行排列。当然，我们也可以自定义排序规则：
+
+```java
+public class SetMain {
+    public static void main(String[] args) {
+        TreeSet<Integer> set = new TreeSet<>((a, b) -> b - a);   //在创建对象时指定规则即可
+        set.add(1);
+        set.add(3);
+        set.add(2);
+        System.out.println(set);
+    }
+}
+```
+
+现在的结果就是我们自定义的排序规则了。
+
+虽然Set集合只是粗略的进行了讲解，但是学习Map之后，我们还会回来看我们Set的底层实现，所以说最重要的还是Map。本节只需要记住Set的性质、使用即可。
+
+
+
+
+
+### Map
+
+#### 什么是映射
+
+我们在高中阶段其实已经学习过映射了，映射指两个元素的之间相互“对应”的关系，也就是说，我们的元素之间是两两对应的，是以键值对的形式存在。
+
+#### Map接口
+
+Map就是为了实现这种数据结构而存在的，我们通过保存键值对的形式来存储映射关系。
+
+```java
+public class MapMain {
+
+    public static void main(String[] args) {
+
+    }
+
+}
+```
+
+
+
+
+
+
+
+

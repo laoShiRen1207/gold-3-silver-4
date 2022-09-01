@@ -1,4 +1,4 @@
-package com.laoshiren.base.collect;
+package com.laoshiren.base.collect.list;
 
 import java.util.ArrayList;
 import java.util.List;
