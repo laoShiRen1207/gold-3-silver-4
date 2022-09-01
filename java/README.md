@@ -5,7 +5,7 @@
 ---
 
 ## Java 基础
-
+[Java 基础](./basics/README.md)
 
 
 ## 锁
