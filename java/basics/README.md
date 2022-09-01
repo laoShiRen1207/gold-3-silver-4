@@ -323,3 +323,33 @@ public class LinkedList<E>
 ```
 
 ### Iterator 
+
+我们之前学习数据结构时，已经得知，不同的线性表实现，在获取元素时的效率也不同，因此我们需要一种更好地方式来统一不同数据结构的遍历。
+
+由于ArrayList对于随机访问的速度更快，而LinkedList对于顺序访问的速度更快，因此在上述的传统for循环遍历操作中，ArrayList的效率更胜一筹，因此我们要使得LinkedList遍历效率提升，就需要采用顺序访问的方式进行遍历，如果没有迭代器帮助我们统一标准，那么我们在应对多种集合类型的时候，就需要对应编写不同的遍历算法，很显然这样会降低我们的开发效率，而迭代器的出现就帮助我们解决了这个问题。
+
+我们先来看看迭代器里面方法：
+
+```java
+public interface Iterator<E> {
+  //...
+}
+```
+
+每个集合类都有自己的迭代器，通过`iterator()`方法来获取：
+
+```java
+Iterator<Integer> iterator = list.iterator();   //生成一个新的迭代器
+while (iterator.hasNext()){    //判断是否还有下一个元素
+  Integer i = iterator.next();     //获取下一个元素（获取一个少一个）
+  System.out.println(i);
+}
+```
+
+迭代器生成后，默认指向第一个元素，每次调用`next()`方法，都会将指针后移，当指针移动到最后一个元素之后，调用`hasNext()`将会返回`false`，迭代器是一次性的，用完即止，如果需要再次使用，需要调用`iterator()`方法。
+
+```java
+ListIterator<Integer> iterator = list.listIterator();   //List还有一个更好地迭代器实现ListIterator
+```
+
+`ListIterator`是List中独有的迭代器，在原有迭代器基础上新增了一些额外的操作。
