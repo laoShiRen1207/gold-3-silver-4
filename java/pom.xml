@@ -28,7 +28,7 @@
         <!--新特性-->
 <!--        <module>feature</module>-->
         <!--设计模式-->
-<!--        <module>design-pattern</module>-->
+        <module>design-pattern</module>
         <!--jvm-->
 <!--        <module>jvm</module>-->
     </modules>
