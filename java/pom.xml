@@ -22,7 +22,7 @@
         <!--基础篇-->
         <module>basics</module>
         <!--锁-->
-<!--        <module>lock</module>-->
+        <module>lock</module>
         <!--多线程-->
 <!--        <module>thread</module>-->
         <!--新特性-->
