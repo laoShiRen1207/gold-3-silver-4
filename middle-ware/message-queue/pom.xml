@@ -4,29 +4,28 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.laoshiren</groupId>
-        <artifactId>gold-3-silver-4</artifactId>
+        <artifactId>middle-ware</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
-    <artifactId>middle-ware</artifactId>
+    <artifactId>message-queue</artifactId>
     <name>${artifactId}</name>
 
-    <packaging>pom</packaging>
+    <description>消息队列</description>
 
-    <description>金3银4 中间件 篇</description>
+    <packaging>pom</packaging>
 
     <properties>
         <java.version>8</java.version>
     </properties>
 
+    <modules>
+        <module>hello-rocketmq</module>
+    </modules>
 
 
     <dependencies>
 
     </dependencies>
-    <modules>
-        <module>message-queue</module>
-    </modules>
-
 
 
 
