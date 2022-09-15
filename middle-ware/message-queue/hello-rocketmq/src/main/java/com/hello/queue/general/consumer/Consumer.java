@@ -35,8 +35,6 @@ public class Consumer implements NamesrvAddr {
             // 逐条消费消息
             for (MessageExt msg : msgs) {
                 System.out.println(msg);
-                String string = new String(msg.getBody());
-                System.out.println(string);
             }
             // 返回消费状态：消费成功
             return ConsumeConcurrentlyStatus.CONSUME_SUCCESS;

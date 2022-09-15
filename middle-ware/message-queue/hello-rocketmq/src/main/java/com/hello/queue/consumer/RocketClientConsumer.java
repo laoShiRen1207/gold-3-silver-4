@@ -1,5 +1,6 @@
 package com.hello.queue.consumer;
 
+import com.hello.queue.NamesrvAddr;
 import org.apache.rocketmq.client.consumer.DefaultMQPushConsumer;
 import org.apache.rocketmq.client.consumer.listener.ConsumeConcurrentlyStatus;
 import org.apache.rocketmq.client.consumer.listener.MessageListenerConcurrently;
@@ -21,7 +22,7 @@ public class RocketClientConsumer {
                 // 实例化消息生产者,指定组名
                 DefaultMQPushConsumer consumer = new DefaultMQPushConsumer("group1");
                 // 指定Namesrv地址信息.
-                consumer.setNamesrvAddr("172.31.2.27:9876");
+                consumer.setNamesrvAddr(NamesrvAddr.namesrvaddr);
                 // 订阅Topic
                 consumer.subscribe("dehua", "*");
                 //负载均衡模式消费
