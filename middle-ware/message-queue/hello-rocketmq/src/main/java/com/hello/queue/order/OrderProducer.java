@@ -25,13 +25,12 @@ public class OrderProducer {
         producer.start();
 
         MessageQueueSelector messageQueueSelector = (mqs, msg, arg) -> {
-            Integer id = (Integer) arg;
 //            System.out.printf("id %d ", id);
 //            System.out.println();
-            int index = id % mqs.size();
+            int index = arg.hashCode() & (mqs.size()-1);
             return mqs.get(index);
         };
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 13; i++) {
             Integer orderId = i;
             byte[] body = ("Hi," + i).getBytes();
             Message msg = new Message("SyncTopic", "TagA", body);
