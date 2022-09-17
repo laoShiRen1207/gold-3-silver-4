@@ -1,12 +1,12 @@
 package com.hello.queue.consumer;
 
 import com.hello.queue.NamesrvAddr;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.rocketmq.client.consumer.DefaultMQPushConsumer;
 import org.apache.rocketmq.client.consumer.listener.ConsumeConcurrentlyStatus;
 import org.apache.rocketmq.client.consumer.listener.MessageListenerConcurrently;
+import org.apache.rocketmq.common.message.MessageExt;
 import org.apache.rocketmq.common.protocol.heartbeat.MessageModel;
-
-import java.util.List;
 
 /**
  * @ClassName RocketClientConsumer
@@ -14,6 +14,7 @@ import java.util.List;
  * @Author laoshiren
  * @Date 13:23 2022/9/15
  */
+@Slf4j
 public class RocketClientConsumer {
 
     static class LBConumser {
