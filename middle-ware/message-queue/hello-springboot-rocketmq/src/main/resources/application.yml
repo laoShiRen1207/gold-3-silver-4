@@ -1,0 +1,12 @@
+server:
+  port: 8950
+spring:
+  application:
+    name: springboot-rocketmq
+
+rocketmq:
+  # rocketMQ的名称服务器，格式为:' host:port;host:port '。
+  name-server: 172.31.2.27:9876
+  # 生产端配置
+  producer:
+    group: ${spring.application.name}  # 生产着组名

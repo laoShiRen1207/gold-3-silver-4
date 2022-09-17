@@ -20,6 +20,7 @@
 
     <modules>
         <module>hello-rocketmq</module>
+        <module>hello-springboot-rocketmq</module>
     </modules>
 
 
