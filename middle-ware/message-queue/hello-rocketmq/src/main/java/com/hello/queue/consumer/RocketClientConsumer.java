@@ -33,11 +33,6 @@ public class RocketClientConsumer {
                     System.out.printf("%s Receive New Messages: %s %n", Thread.currentThread().getName(), msgs);
                     return ConsumeConcurrentlyStatus.CONSUME_SUCCESS;
                 });
-
-                consumer.registerMessageListener((MessageListenerConcurrently) (msgs, context) -> {
-                    System.out.printf("%s Receive New Messages: %s %n", Thread.currentThread().getName(), msgs);
-                    return ConsumeConcurrentlyStatus.CONSUME_SUCCESS;
-                });
                 //启动消息者
                 consumer.start();
                 System.out.printf("Consumer Started.%n");
