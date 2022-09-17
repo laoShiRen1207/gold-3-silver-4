@@ -49,6 +49,11 @@ public class SimpleProducer {
         });
     }
 
+    public void onewaySend() {
+        Message<String> sendMessage = MessageBuilder.withPayload(message).build();
+        rocketMQTemplate.sendOneWay("simple", sendMessage);
+    }
+
     public TransactionSendResult transactionSend(){
         Message<String> rocketMsg = MessageBuilder.withPayload(message).build();
         return rocketMQTemplate.sendMessageInTransaction("transaction", rocketMsg, null);

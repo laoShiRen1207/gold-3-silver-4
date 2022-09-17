@@ -38,6 +38,14 @@ public class ProducerController {
         return new ResponseEntity<>(map,HttpStatus.OK);
     }
 
+    @GetMapping("oneway/send")
+    public ResponseEntity<Map<String,String>> onewaySend(){
+        simpleProducer.onewaySend();
+        Map<String,String> map = new LinkedHashMap<>();
+        map.put("send","ok");
+        return new ResponseEntity<>(map,HttpStatus.OK);
+    }
+
     @GetMapping("transaction/send")
     public ResponseEntity<SendResult> transactionSend(){
         SendResult send = simpleProducer.transactionSend();
