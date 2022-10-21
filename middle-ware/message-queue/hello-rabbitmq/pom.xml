@@ -4,13 +4,13 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.laoshiren</groupId>
-        <artifactId>java</artifactId>
+        <artifactId>message-queue</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
-    <artifactId>design-pattern</artifactId>
+    <artifactId>hello-rabbitmq</artifactId>
     <name>${artifactId}</name>
 
-    <description>金3银4 java 设计模式 篇</description>
+    <description>消息队列</description>
 
     <properties>
         <java.version>8</java.version>
@@ -20,10 +20,15 @@
 
     <dependencies>
         <dependency>
-            <groupId>cglib</groupId>
-            <artifactId>cglib</artifactId>
-            <version>3.1</version>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-amqp</artifactId>
+        </dependency>
+
     </dependencies>
 
 

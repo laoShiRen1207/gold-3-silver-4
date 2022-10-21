@@ -1,0 +1,8 @@
+spring:
+  ## rabbit mq 基本设置
+  rabbitmq:
+    addresses: 172.31.2.27
+    port: 5672
+    username: root
+    password: root
+    virtual-host: /

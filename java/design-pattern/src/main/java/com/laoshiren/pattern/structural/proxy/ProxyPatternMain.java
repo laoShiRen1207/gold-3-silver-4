@@ -28,11 +28,16 @@ public class ProxyPatternMain {
 
 }
 
+
+interface ISubject {
+    void test();
+}
+
 abstract class Subject implements ISubject {
 }
 
 //此类无法直接使用，需要我们进行代理
-class SubjectImpl implements ISubject {
+class SubjectImpl extends Subject implements ISubject {
 
     @Override
     public void test() {
@@ -58,9 +63,6 @@ class MyProxy extends Subject {
     }
 }
 
-interface ISubject {
-    void test();
-}
 
 class TestProxy implements InvocationHandler {    //代理类，需要实现InvocationHandler接口
 
