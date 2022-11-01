@@ -30,7 +30,7 @@
         <!--设计模式-->
         <module>design-pattern</module>
         <!--jvm-->
-<!--        <module>jvm</module>-->
+        <module>jvm</module>
     </modules>
 
     <dependencies>
